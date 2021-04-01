@@ -5,3 +5,6 @@ Pipfile.lock
 #db
 db.sqlite3
 migrations
+
+#Scripts
+scripts/

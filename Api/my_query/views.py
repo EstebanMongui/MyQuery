@@ -1,1 +1,1 @@
-"""My querie api views"""
+"""My query api views"""
