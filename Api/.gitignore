@@ -1,0 +1,6 @@
+# Virtuel Env
+Pipfile
+Pipfile.lock
+
+#db
+db.sqlite3

@@ -1,0 +1,1 @@
+"""queries viewsets module"""
