@@ -1,0 +1,17 @@
+@import "../../assets/styles/variables.scss";
+
+.FilterBar{
+    display: flex;
+    justify-content: space-between;
+    max-width: 954px;
+    width: 100vw;
+    font-family: $primary-font;
+    margin: 100px 0;
+}
+.FilterBar li{
+    text-align: center;
+    max-width: 224px;
+    font-size: 2em;
+    font-weight: 500;
+    color: $font-color;
+}

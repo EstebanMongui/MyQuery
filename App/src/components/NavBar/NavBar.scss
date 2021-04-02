@@ -1,0 +1,25 @@
+@import "../../assets/styles/variables.scss";
+.NavBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 954px;
+    min-height: 100px;
+    width: 100vw;
+    height: auto;
+}
+.__Logo{
+    object-fit: fill;
+}
+.__Logo img{
+    height: 100%;
+}
+.__Menu{
+    display: flex;
+    font-family: $primary-font;
+}
+.__Menu li{
+    font-size: 2.5em;
+    font-weight: 500;
+    color: $font-color;
+}
