@@ -1,0 +1,24 @@
+@import "../../assets/styles/variables.scss";
+
+.QueryCard{
+    display: flex;
+    max-height: 156px;
+    max-width: 955px;
+    width: 100vw;
+    height: 100vh;
+}
+.__QueryText{
+    width: 80%;
+    height: 100%;
+    color: $font-color;
+}
+.__QueryText p{
+    font-family: $primary-font;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+.__QueryTags{
+    width: 20%;
+    height: 100%;
+    margin-left: 20px;
+}

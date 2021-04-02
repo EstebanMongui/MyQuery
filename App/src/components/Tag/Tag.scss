@@ -1,0 +1,13 @@
+@import "../../assets/styles/variables.scss";
+
+.Tag{
+    height: 39px;
+    width: 229px;
+    line-height: 19.5px;
+}
+.Tag h2{
+    font-family: $primary-font;
+    font-size: 1.3em;
+    font-weight: 400;
+    color: $font-color;
+}

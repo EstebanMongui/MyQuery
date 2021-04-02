@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+//*******$Settings********//
+*{
+    margin:0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: unset;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+}
+*:focus{
+    outline: unset;
+}
+
+//*******$COLORS**********//
+
+//Decorative colors
+
+$color-primary: #00B395;
+$color-secondary: #FF5714;
+$color-complementary: #a5d8ff;
+
+//Backgrounds
+$backgroud-primary: #FAFFFE;
+$backgroud-secondary: #EFFBF8;
+$backgroud-complementary: #FFF8F5;
+
+
+//Text colors
+$font-color: #001A15;
+
+//***********Fonts**********//
+
+//Brand fonts
+$primary-font: 'Lato', sans-serif;
+
+//**********Sizes**********//
+$radius-1: 10px;
+$radius-2: 20px;

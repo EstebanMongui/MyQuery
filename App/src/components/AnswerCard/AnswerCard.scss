@@ -1,0 +1,24 @@
+@import "../../assets/styles/variables.scss";
+
+.AnswerCard{
+    display: flex;
+    max-height: 175px;
+    max-width: 954px;
+    width: 100vw;
+}
+.__AnswerText{
+    height: 100%;
+    width: 80%;
+    font-family: $primary-font;
+}
+.__AnswerText p{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: $font-color;
+}
+.__AnswerTags{
+    height: 100%;
+    width: 20%;
+    margin-right: 20px;
+    text-align: center;
+}
