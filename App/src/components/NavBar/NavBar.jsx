@@ -1,17 +1,24 @@
 import React from "react";
 import "./NavBar.scss";
+import { Link } from "react-router-dom"
 
 import logo from "../../assets/images/logo.png"
 
 function NavBar(props){
     return(
         <div className="NavBar">
-            <figure className="__Logo">
-                <img src={logo} alt="Logo"/>
-            </figure>
+            <Link to="/">
+                <figure className="__Logo">
+                    <img src={logo} alt="Logo"/>
+                </figure>
+            </Link>
             <nav className="__Menu">
                 <ul>
-                    <li>Estadisticas</li>
+                    <Link to="/Statistics">
+                        <li>
+                                Estadisticas
+                        </li>
+                    </Link>
                 </ul>
             </nav>
         </div>

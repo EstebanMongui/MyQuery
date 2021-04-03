@@ -1,8 +1,14 @@
 @import "../../assets/styles/variables.scss";
-
-.Home{
+.Statistics{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $backgroud-primary;
+}
+.StatisticsBox__Container{
+    max-width: 954px;
+    width: 100vw;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
 }
