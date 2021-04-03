@@ -15,7 +15,8 @@ class QueryList(APIView):
     def get(self, request, format=None):
         queries = Query.objects.all()
         serializer = QuerySerializer(queries, many=True)
-        return Response(serializer.data)
+        data = serializer.data
+        return Response(data)
 
     def post(self, request, format=None):
         serializer = QuerySerializer(data=request.data)
@@ -45,3 +46,10 @@ class AnswerList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)    
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class AnswerFilter(APIView):
+    """Filter answer by query pair id"""
+    def get(self, request, query_id, format=None):
+        answer = Answer.objects.filter(query_pair=query_id)
+        serializer = AnswerSerializer(answer, many=True)
+        return Response(serializer.data)

@@ -13,6 +13,7 @@ urlpatterns = [
     path('queries/', views.QueryList.as_view()),
     path('queries/<str:category>/', views.QueryFilter.as_view()),
     path('answers/', views.AnswerList.as_view()),
+    path('answers/<int:query_id>/', views.AnswerFilter.as_view()),
     # path('access/<int:age>', views.access),
 ]
 
