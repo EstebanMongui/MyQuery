@@ -1,18 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AnswerCard.scss";
-
+import clearDate from "../../modules/clearDate"
 import Tag from "../Tag/Tag"
 
-function AnswerCard(props){
+function AnswerCard({query_id}){
+
+    const [answer, setAnswer] = useState([])
+
+    function getAnswer(){
+        fetch(`http://127.0.0.1:8000/answers/${query_id}/`,{
+            method:'GET',
+            mode:'cors'
+        })
+        .then((response)=>{
+            return response.json()
+        })
+        .then((answers)=>{
+            answers.map(a => {
+                return(
+                    setAnswer(a)
+                )
+            })
+        })
+    }
     
+    useEffect(()=>{
+        getAnswer()
+    }, [])
+
+    if (!answer.id){
+        return null
+    }
     return(
         <div className="AnswerCard">
             <div className="__AnswerTags">
                 <Tag value="username"/>
-                <Tag value="dd/mm/aaaa"/>
+                <Tag value={clearDate(answer.created)}/>
             </div>
             <div className="__AnswerText">
-                <p>{props.answer}</p>
+                <p>{answer.value}</p>
             </div>
         </div>
     )
