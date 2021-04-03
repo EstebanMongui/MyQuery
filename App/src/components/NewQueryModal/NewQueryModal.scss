@@ -1,0 +1,61 @@
+@import "../../assets/styles/variables.scss";
+
+.NewQueryModal{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 179,149, .30%);
+    backdrop-filter: blur(2px);
+}
+.NewQueryForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    width: 50vw;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: start;
+    background-color: #FFF8F5;
+}
+.CloseBtn{
+    position: absolute;
+    top: 25vh;
+    right: 22vw;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: $color-secondary;
+    color: white;
+}
+.NewQueryForm textarea{
+    height: 90%;
+    width: 99%;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: $font-color;
+}
+
+.__FormOptions{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.__FormOptions select{
+    height: 39px;
+    width: 40%;
+    padding: 10px;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 1.3em;
+}

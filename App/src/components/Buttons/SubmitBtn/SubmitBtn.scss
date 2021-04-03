@@ -1,0 +1,12 @@
+@import "../../../assets/styles/variables.scss"; 
+.SubmitBtn{
+    max-width: 224px;
+    height: 39px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $color-primary;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: white;
+}

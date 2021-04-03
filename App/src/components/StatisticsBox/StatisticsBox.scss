@@ -1,0 +1,33 @@
+@import "../../assets/styles/variables.scss";
+
+.StatisticsBox{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 30vw;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,.15%);
+    font-family: $primary-font;
+    color: $font-color;
+}
+.StatisticsBox h2{
+    width: 100%;
+    height: 20%;
+    font-weight: 500;
+    font-size: 2em;
+}
+.__QueriesPercent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+}
+.__QueriesPercent h1{
+    font-weight: 700;
+    font-size: 15em;
+}
+.__QueriesPercent h3{
+    font-weight: 500;
+    font-size: 1.5em;
+}
