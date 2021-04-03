@@ -18,6 +18,8 @@ class Query(models.Model):
         default='',
     )
 
+    is_answered = models.BooleanField(default=False)
+
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 

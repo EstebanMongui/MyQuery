@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'queries',
+    'users',
 ]
 
 MIDDLEWARE = [

@@ -6,6 +6,7 @@ from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
 # Views
 from queries import views
+from users import views as UsersViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,6 +15,7 @@ urlpatterns = [
     path('queries/<str:category>/', views.QueryFilter.as_view()),
     path('answers/', views.AnswerList.as_view()),
     path('answers/<int:query_id>/', views.AnswerFilter.as_view()),
+    path('users/', UsersViews.LocalUserList.as_view()),
     # path('access/<int:age>', views.access),
 ]
 

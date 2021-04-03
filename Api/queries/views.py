@@ -41,8 +41,12 @@ class AnswerList(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
+        """Create new answer and change query is answered state"""
         serializer = AnswerSerializer(data=request.data)
+        query = Query.objects.get(pk=request.data['query_pair'])
         if serializer.is_valid():
+            query.is_answered = True
+            query.save()
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)    
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
