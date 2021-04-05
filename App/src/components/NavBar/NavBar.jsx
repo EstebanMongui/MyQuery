@@ -16,7 +16,7 @@ function NavBar(props){
                 <ul>
                     <Link to="/Statistics">
                         <li>
-                                Estadisticas
+                                Estadísticas
                         </li>
                     </Link>
                 </ul>

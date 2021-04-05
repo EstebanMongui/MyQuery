@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./QueryCard.scss";
 import Tag from "../Tag/Tag";
-import AnswerCard from "../AnswerCard/AnswerCard"
-import clearDate from "../../modules/clearDate"
+import AnswerCard from "../AnswerCard/AnswerCard";
+import clearDate from "../../modules/clearDate";
+import refactCaregory from "../../modules/dataRefactor"
 
 function QueryCard(props){
     
-    // eslint-disable-next-line no-unused-vars
-    const [queries, setQuery] = useState([]);
+    const [queries, setQueries] = useState([]);
+    data = queries
+    const [answer] = useState(null)
     const URL = 'http://127.0.0.1:8000/queries/';
-    console.log(queries)
 
-    useEffect(()=>{
+
+    function getQueries(){
         fetch(URL, {
             method: 'GET',
             mode:'cors',
@@ -19,24 +21,17 @@ function QueryCard(props){
                 'content-type':'application/json'
             }
         })
-        .then((response)=>{
+        .then((response) => {
             return response.json()
         })
-        .then((queries)=>{
-            setQuery(queries)
+        .then((queries) => {
+            return setQueries(queries)
         })
-    }, [])
-
-    function refactCaregory(category){
-        if (category === 'TEC'){
-            return 'Tecnológica'
-        }else if(category === 'ECH'){
-            return 'Economica'
-        }else if(category === 'LEG'){
-            return 'Legal'
-        }
-        return 'Administrativa'
     }
+
+    useEffect(()=>{
+        getQueries()
+    }, [])
 
     return(
         <div className="QueryCard__Container">
@@ -53,12 +48,14 @@ function QueryCard(props){
                                 <Tag value={clearDate(query.created)}/>
                             </div>
                         </div>
-                        <AnswerCard query_id={query.id}/>
+                        <AnswerCard answer={answer} queryId={query.id}/>
                     </React.Fragment>
                 );
             })}
         </div>
     )
 }
+
+export let data = []
 
 export default QueryCard;

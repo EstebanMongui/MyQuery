@@ -1,35 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./AnswerCard.scss";
 import clearDate from "../../modules/clearDate"
 import Tag from "../Tag/Tag"
+import SubmitBtn from "../Buttons/SubmitBtn/SubmitBtn"
 
-function AnswerCard({query_id}){
+function AnswerCard({answer, queryId}){
 
-    const [answer, setAnswer] = useState([])
-
-    function getAnswer(){
-        fetch(`http://127.0.0.1:8000/answers/${query_id}/`,{
-            method:'GET',
-            mode:'cors'
-        })
-        .then((response)=>{
-            return response.json()
-        })
-        .then((answers)=>{
-            answers.map(a => {
-                return(
-                    setAnswer(a)
-                )
-            })
-        })
-    }
-    
-    useEffect(()=>{
-        getAnswer()
-    }, [])
-
-    if (!answer.id){
-        return null
+    if (!answer){
+        return(
+            <SubmitBtn value="Responder" queryId={queryId}/>
+        )
     }
     return(
         <div className="AnswerCard">
@@ -38,7 +18,7 @@ function AnswerCard({query_id}){
                 <Tag value={clearDate(answer.created)}/>
             </div>
             <div className="__AnswerText">
-                <p>{answer.value}</p>
+                <p>{answer}</p>
             </div>
         </div>
     )

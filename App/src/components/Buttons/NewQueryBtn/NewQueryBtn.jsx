@@ -10,7 +10,6 @@ const NewQueryBtn = () =>{
     const openModal = () => setOpen(true)
     const closeModal = () => setOpen(null)
 
-
     return(
         <React.Fragment>
             <button className="NewQueryBtn" onClick={openModal}>

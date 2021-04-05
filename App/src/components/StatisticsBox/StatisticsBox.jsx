@@ -1,18 +1,27 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import "./StatisticsBox.scss"
 
-function StatisticsBox(props){
+
+function StatisticsBox({ds}){
+    
+    const [dataSet, clearDataSet] = useState(Array.from(ds))
+    const categoy = (data) => data[0]
+    const queantity = (data) => data[1]
+
     return(
-        <React.Fragment>
-            <div className="StatisticsBox">
-                <h2>Category Name</h2>
-                <div className="__QueriesPercent">
-                    <h1>#</h1>
-                    <h3>Queries</h3>
-                </div>
-            </div>
-        </React.Fragment>
+        <div className="StaticBoxContainer">
+            {dataSet.map(data => {
+                return(
+                    <div className="StatisticsBox">
+                        <h2>{categoy(data)}</h2>
+                        <div className="__QueriesPercent">
+                            <h1>{queantity(data)}</h1>
+                            <h3>Preguntas</h3>
+                        </div>
+                    </div>
+                )
+            })}
+        </div>
     );
 };
 
