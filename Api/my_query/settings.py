@@ -133,3 +133,5 @@ STATIC_URL = '/static/'
 
 #CORS settings
 CORS_ALLOW_ALL_ORIGINS=True
+
+APPEND_SLASH = False 

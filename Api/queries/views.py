@@ -30,6 +30,7 @@ class QueryFilter(APIView):
     def get(self, request, category, format=None):
         query = Query.objects.filter(category=category)
         serializer = QuerySerializer(query, many=True)
+        import pdb; pdb.set_trace()
         return Response(serializer.data)
 
 

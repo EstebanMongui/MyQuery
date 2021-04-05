@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
  
 class Query(models.Model):
-    value = models.TextField(blank=True)
+    value = models.TextField(blank=False)
 
     QUERY_CATEGORIES = (
         ('TEC', 'Technical'),
@@ -24,7 +24,7 @@ class Query(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
 class Answer(models.Model):
-    query_pair = models.ForeignKey(
+    query_pair = models.OneToOneField(
         'Query',
         on_delete=models.CASCADE
     )
